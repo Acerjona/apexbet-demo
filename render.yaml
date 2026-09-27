@@ -13,12 +13,28 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: DB_HOST
-        sync: false
+        fromDatabase:
+          name: apexbet-db
+          property: host
       - key: DB_PORT
-        value: 5432
+        fromDatabase:
+          name: apexbet-db
+          property: port
       - key: DB_NAME
-        sync: false
+        fromDatabase:
+          name: apexbet-db
+          property: database
       - key: DB_USER
-        sync: false
+        fromDatabase:
+          name: apexbet-db
+          property: user
       - key: DB_PASSWORD
-        sync: false
+        fromDatabase:
+          name: apexbet-db
+          property: password
+
+  - name: apexbet-db
+    type: pserv
+    plan: free
+    databaseName: apexbet
+    user: apexbet
