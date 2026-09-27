@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ApexBet</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">APEX<span>BET</span></div>
+      <nav>
+        <a href="#">Sports</a>
+        <a href="#">In-Play</a>
+        <a href="#">Schedule</a>
+        <a href="#">Promotions</a>
+      </nav>
+      <div class="wallet-panel">
+        <span id="wallet-balance">$0.00</span>
+        <button id="deposit-btn">Deposit</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="section">
+          <h3>Popular</h3>
+          <ul>
+            <li class="active">Premier League</li>
+            <li>Champions League</li>
+            <li>NBA</li>
+            <li>ATP Masters</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section id="fixtures"></section>
+      </main>
+
+      <aside class="betslip">
+        <div class="tabs">
+          <button class="tab active" data-tab="betslip">Betslip</button>
+          <button class="tab" data-tab="history">My Bets</button>
+        </div>
+
+        <div id="betslip-content" class="panel active"></div>
+        <div id="history-content" class="panel"></div>
+      </aside>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-alt: #1f2937;
+  --card: #1e293b;
+  --border: #334155;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #2563eb;
+  --highlight: #10b981;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+}
+
+.topbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  background: #0b1220;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 26px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.wallet-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+#wallet-balance {
+  font-weight: 700;
+}
+
+#deposit-btn {
+  border: none;
+  background: var(--highlight);
+  color: #04150d;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: 8px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr 330px;
+  min-height: calc(100vh - 70px);
+}
+
+.sidebar,
+.betslip {
+  background: #0b1220;
+}
+
+.sidebar {
+  border-right: 1px solid var(--border);
+}
+
+.sidebar h3 {
+  padding: 18px 16px 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 12px 16px;
+  color: var(--muted);
+  border-left: 3px solid transparent;
+}
+
+.sidebar li.active {
+  background: var(--panel-alt);
+  color: var(--text);
+  border-left-color: var(--accent);
+}
+
+.content {
+  padding: 20px;
+}
+
+.fixture-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.fixture-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.market-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.match-teams {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.odds-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.odd-button {
+  background: #0f172a;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 82px;
+  color: var(--text);
+}
+
+.odd-button.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.odd-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.odd-button.selected .odd-label {
+  color: rgba(255,255,255,0.8);
+}
+
+.odd-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.betslip {
+  border-left: 1px solid var(--border);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  padding: 16px 8px;
+  font-weight: 700;
+}
+
+.tab.active {
+  color: var(--text);
+  background: var(--panel-alt);
+  border-bottom: 2px solid var(--accent);
+}
+
+.panel {
+  display: none;
+  padding: 16px;
+}
+
+.panel.active {
+  display: block;
+}
+
+.bet-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.bet-item-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.bet-item small {
+  color: var(--muted);
+}
+
+.stake-control {
+  margin-top: 18px;
+}
+
+.stake-control label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.stake-control input {
+  width: 100%;
+  background: #0f172a;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.summary {
+  margin-top: 18px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.summary-row.total {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.place-bet-btn {
+  width: 100%;
+  margin-top: 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  padding: 12px;
+}
+
+.empty-state {
+  color: var(--muted);
+  padding: 20px 10px;
+  text-align: center;
+}
